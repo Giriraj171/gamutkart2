@@ -31,7 +31,7 @@ pipeline {
 
         stage('Deployment') {
             steps {
-                sh 'sshpass -p "giri" scp target/gamutgurus.war giri@172.17.0.2:/home/giri/projectapache-tomcat-9.0.70/webapps'
+                sh 'sshpass -p "giri" scp target/gamutgurus.war giri@172.17.0.2:/home/giri/project/apache-tomcat-9.0.70/webapps'
                 sh 'sshpass -p "giri" ssh giri@172.17.0.2 "/home/giri/project/apache-tomcat-9.0.70/bin/startup.sh"'
             }
         }
